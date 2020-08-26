@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/basic_01_02/basic_01_02.iml" filepath="$PROJECT_DIR$/basic_01_02/basic_01_02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basic_03_04/basic_03_04.iml" filepath="$PROJECT_DIR$/basic_03_04/basic_03_04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basic_05_06/basic_05_06.iml" filepath="$PROJECT_DIR$/basic_05_06/basic_05_06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basic_07_08/basic_07_08.iml" filepath="$PROJECT_DIR$/basic_07_08/basic_07_08.iml" />
+    </modules>
+  </component>
+</project>
