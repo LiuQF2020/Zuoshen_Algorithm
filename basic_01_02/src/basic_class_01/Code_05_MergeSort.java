@@ -4,24 +4,22 @@ import java.util.Arrays;
 
 public class Code_05_MergeSort {
 
-	public static void mergeSort(int[] arr) {
-		if (arr == null || arr.length < 2) {
-			return;
-		}
-		mergeSort(arr, 0, arr.length - 1);
+	public static void sortProcess(int[] arr) {
+		if (arr == null || arr.length < 2)	return;
+		sortProcess(arr, 0, arr.length - 1);
 	}
 
-	public static void mergeSort(int[] arr, int l, int r) {
+	public static void sortProcess(int[] arr, int l, int r) {
 		if (l == r) {
 			return;
 		}
-		// 相当于
+		// 相当于(l + r) / 2
 		int mid = l + ((r - l) >> 1);
 
 		// 从l到mid已经排好序：
-		mergeSort(arr, l, mid);
+		sortProcess(arr, l, mid);
 		// 从mid+1到r已经排好序：
-		mergeSort(arr, mid + 1, r);
+		sortProcess(arr, mid + 1, r);
 
 		// 从l到mid已经排好序，且从mid+1到r已经排好序；
 		// 但是此时总体无序，如何让总体有序？进行merge：
@@ -117,7 +115,7 @@ public class Code_05_MergeSort {
 		for (int i = 0; i < testTime; i++) {
 			int[] arr1 = generateRandomArray(maxSize, maxValue);
 			int[] arr2 = copyArray(arr1);
-			mergeSort(arr1);
+			sortProcess(arr1);
 			comparator(arr2);
 			if (!isEqual(arr1, arr2)) {
 				succeed = false;
@@ -130,7 +128,7 @@ public class Code_05_MergeSort {
 
 		int[] arr = generateRandomArray(maxSize, maxValue);
 		printArray(arr);
-		mergeSort(arr);
+		sortProcess(arr);
 		printArray(arr);
 
 	}
