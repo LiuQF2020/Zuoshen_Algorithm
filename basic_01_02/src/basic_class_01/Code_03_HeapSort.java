@@ -19,6 +19,9 @@ public class Code_03_HeapSort {
 		}
 	}
 
+
+	// 如果当前节点元素的值大于其父节点元素的值，那么交换，同时index变成当前节点的父节点；
+	// 一直while循环操作，直到不比父节点元素大为止。
 	public static void heapInsert(int[] arr, int index) {
 		while (arr[index] > arr[(index - 1) / 2]) {
 			swap(arr, index, (index - 1) / 2);
@@ -30,7 +33,9 @@ public class Code_03_HeapSort {
 		int left = index * 2 + 1;
 		while (left < size) {
 			int largest = left + 1 < size && arr[left + 1] > arr[left] ? left + 1 : left;
-			largest = arr[largest] > arr[index] ? largest : index;
+			largest =
+					arr[largest] > arr[index] ?
+							largest : index;
 			if (largest == index) {
 				break;
 			}
