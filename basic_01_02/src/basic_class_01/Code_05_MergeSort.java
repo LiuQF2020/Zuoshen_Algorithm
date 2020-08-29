@@ -15,9 +15,16 @@ public class Code_05_MergeSort {
 		if (l == r) {
 			return;
 		}
+		// 相当于
 		int mid = l + ((r - l) >> 1);
+
+		// 从l到mid已经排好序：
 		mergeSort(arr, l, mid);
+		// 从mid+1到r已经排好序：
 		mergeSort(arr, mid + 1, r);
+
+		// 从l到mid已经排好序，且从mid+1到r已经排好序；
+		// 但是此时总体无序，如何让总体有序？进行merge：
 		merge(arr, l, mid, r);
 	}
 
