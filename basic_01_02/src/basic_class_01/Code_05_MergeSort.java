@@ -28,15 +28,20 @@ public class Code_05_MergeSort {
 		merge(arr, l, mid, r);
 	}
 
-	public static void merge(int[] arr, int l, int m, int r) {
+	public static void merge(int[] arr, int l, int mid, int r) {
 		int[] help = new int[r - l + 1];
 		int i = 0;
 		int p1 = l;
-		int p2 = m + 1;
-		while (p1 <= m && p2 <= r) {
+		int p2 = mid + 1;
+
+		// 双指针，谁小填谁
+		while (p1 <= mid && p2 <= r) {
 			help[i++] = arr[p1] < arr[p2] ? arr[p1++] : arr[p2++];
 		}
-		while (p1 <= m) {
+
+		// 走完上一个while之后，以下两个while有且只有一个会越界
+		// 越界之后，将另一个数组的剩下部分填入help数组后面
+		while (p1 <= mid) {
 			help[i++] = arr[p1++];
 		}
 		while (p2 <= r) {
