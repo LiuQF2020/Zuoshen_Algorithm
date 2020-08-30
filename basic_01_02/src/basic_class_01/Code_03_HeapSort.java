@@ -11,15 +11,35 @@ public class Code_03_HeapSort {
 		for (int i = 0; i < arr.length; i++) {
 			heapInsert(arr, i);
 		}
-		int size = arr.length;
-		swap(arr, 0, --size);
-		while (size > 0) {
-			heapify(arr, 0, size);
-			swap(arr, 0, --size);
+		int heapSize = arr.length;
+
+		// 最后一个位置上的数和堆顶元素进行交换，交换完之后，堆的大小减1，所以size(heapSize)--
+		// 即每次把当前最大的元素从堆顶取出，放到
+		swap(arr, 0, --heapSize);
+		while (heapSize > 0) {
+			// 当前的堆继续调整成大根堆
+			heapify(arr, 0, heapSize);
+			// 再在大根堆基础上进行swap操作，大根堆元素一直跟0位置上的数交换，直到heapSize减少到0
+			swap(arr, 0, --heapSize);
 		}
 	}
 
 
+	/*
+	1、几个概念：
+	二叉树：
+	满二叉树：
+	完全二叉树：
+
+	堆：属于完全二叉树；分为大根堆、小根堆；可以用数组实现，只需要作坐标变换即可；
+	大根堆：在该二叉树中，任何一棵子树的最大值都是头部；
+	小根堆：在该二叉树中，任何一棵子树的最小值都是头部；
+
+	2、下标变换：
+	index的父节点：father_index = (index - 1) / 2;
+	index的左子节点：left = (2 * index + 1);
+	index的右子节点：right = (2 * index + 2);
+	 */
 	// 如果当前节点元素的值大于其父节点元素的值，那么交换，同时index变成当前节点的父节点；
 	// 一直while循环操作，直到不比父节点元素大为止。
 	public static void heapInsert(int[] arr, int index) {
@@ -29,16 +49,13 @@ public class Code_03_HeapSort {
 		}
 	}
 
-	public static void heapify(int[] arr, int index, int size) {
+	public static void heapify(int[] arr, int index, int heapSize) {
 		int left = index * 2 + 1;
-		while (left < size) {
-			int largest = left + 1 < size && arr[left + 1] > arr[left] ? left + 1 : left;
-			largest =
-					arr[largest] > arr[index] ?
-							largest : index;
-			if (largest == index) {
-				break;
-			}
+		while (left < heapSize) {
+			int largest = left + 1 < heapSize && arr[left + 1] > arr[left] ? left + 1 : left;
+			largest = arr[largest] > arr[index] ? largest : index;
+			if (largest == index) break;
+
 			swap(arr, largest, index);
 			index = largest;
 			left = index * 2 + 1;
