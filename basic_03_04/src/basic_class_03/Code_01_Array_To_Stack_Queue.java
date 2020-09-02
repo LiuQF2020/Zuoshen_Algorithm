@@ -1,9 +1,16 @@
 package basic_class_03;
+/*
+已讲解
+ */
+
+/*
+用数组结构实现大小固定的队列和栈
+ */
 
 public class Code_01_Array_To_Stack_Queue {
 
 	public static class ArrayStack {
-		private Integer[] arr;
+		private final Integer[] arr;
 		private Integer size;
 
 		public ArrayStack(int initSize) {

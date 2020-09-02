@@ -1,11 +1,22 @@
 package basic_class_03;
+/*
+已讲解
+ */
+
+/*
+实现一个特殊的栈，在实现栈的基本功能的基础上，再实现返
+回栈中最小元素的操作。
+【要求】
+1．pop、push、getMin操作的时间复杂度都是O(1)。
+2．设计的栈类型可以使用现成的栈结构。
+ */
 
 import java.util.Stack;
 
 public class Code_02_GetMinStack {
 	public static class MyStack1 {
-		private Stack<Integer> stackData;
-		private Stack<Integer> stackMin;
+		private final Stack<Integer> stackData;
+		private final Stack<Integer> stackMin;
 
 		public MyStack1() {
 			this.stackData = new Stack<Integer>();
