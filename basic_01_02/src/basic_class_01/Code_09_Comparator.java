@@ -21,6 +21,7 @@ public class Code_09_Comparator {
 
 		@Override
 		public int compare(Student o1, Student o2) {
+			// 升序：返回o1-o2
 			return o1.id - o2.id;
 		}
 
@@ -30,9 +31,9 @@ public class Code_09_Comparator {
 
 		@Override
 		public int compare(Student o1, Student o2) {
+			// 降序：返回o2-o1
 			return o2.id - o1.id;
 		}
-
 	}
 
 	public static class AgeAscendingComparator implements Comparator<Student> {
@@ -45,6 +46,7 @@ public class Code_09_Comparator {
 	}
 
 	public static class AgeDescendingComparator implements Comparator<Student> {
+
 
 		@Override
 		public int compare(Student o1, Student o2) {
