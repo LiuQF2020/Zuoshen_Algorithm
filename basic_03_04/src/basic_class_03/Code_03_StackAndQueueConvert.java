@@ -48,52 +48,61 @@ public class Code_03_StackAndQueueConvert {
 			}
 			return stackPop.peek();
 		}
-	}
 
-	public static class TwoQueuesStack {
-		private Queue<Integer> queue;
-		private Queue<Integer> help;
-
-		public TwoQueuesStack() {
-			queue = new LinkedList<Integer>();
-			help = new LinkedList<Integer>();
-		}
-
-		public void push(int pushInt) {
-			queue.add(pushInt);
-		}
-
-		public int peek() {
-			if (queue.isEmpty()) {
-				throw new RuntimeException("Stack is empty!");
+		public void dao() {
+			/*
+			实现倒数据
+			 */
+			if (!stackPop.isEmpty()) return;
+			while (!stackPush.isEmpty()) {
+				stackPop.push(stackPush.pop());
 			}
-			while (queue.size() != 1) {
-				help.add(queue.poll());
-			}
-			int res = queue.poll();
-			help.add(res);
-			swap();
-			return res;
 		}
 
-		public int pop() {
-			if (queue.isEmpty()) {
-				throw new RuntimeException("Stack is empty!");
-			}
-			while (queue.size() > 1) {
-				help.add(queue.poll());
-			}
-			int res = queue.poll();
-			swap();
-			return res;
-		}
+		public static class TwoQueuesStack {
+			private Queue<Integer> queue;
+			private Queue<Integer> help;
 
-		private void swap() {
-			Queue<Integer> tmp = help;
-			help = queue;
-			queue = tmp;
-		}
+			public TwoQueuesStack() {
+				queue = new LinkedList<Integer>();
+				help = new LinkedList<Integer>();
+			}
 
+			public void push(int pushInt) {
+				queue.add(pushInt);
+			}
+
+			public int peek() {
+				if (queue.isEmpty()) {
+					throw new RuntimeException("Stack is empty!");
+				}
+				while (queue.size() != 1) {
+					help.add(queue.poll());
+				}
+				int res = queue.poll();
+				help.add(res);
+				swap();
+				return res;
+			}
+
+			public int pop() {
+				if (queue.isEmpty()) {
+					throw new RuntimeException("Stack is empty!");
+				}
+				while (queue.size() > 1) {
+					help.add(queue.poll());
+				}
+				int res = queue.poll();
+				swap();
+				return res;
+			}
+
+			private void swap() {
+				Queue<Integer> tmp = help;
+				help = queue;
+				queue = tmp;
+			}
+		}
 	}
 
 }
