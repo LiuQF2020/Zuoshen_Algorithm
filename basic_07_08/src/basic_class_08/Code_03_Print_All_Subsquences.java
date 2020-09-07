@@ -45,11 +45,20 @@ public class Code_03_Print_All_Subsquences {
 	public static List<Character> copyList(List<Character> list){
 		return null;
 	}
-	
+
+	public static void printAllsub1(char[] str, int i, String res) {
+		if (i == str.length) {
+			System.out.println(res);
+			return;
+		}
+		printAllsub1(str, i + 1, res); // 不要当前字符
+		printAllsub1(str, i + 1, res + String.valueOf(str[i])); // 要当前字符
+	}
 
 	public static void main(String[] args) {
 		String test = "abc";
-		printAllSubsquence(test);
+//		printAllSubsquence(test);
+		printAllsub1(test.toCharArray(), 0, "");
 	}
 
 }

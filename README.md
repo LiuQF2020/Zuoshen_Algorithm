@@ -50,6 +50,6 @@ Code_04_DogCatQueue.java；Code_06_PrintMatrixSpiralOrder.java；Code_05_RotateM
 
 
 
-#### 8、第八课，：
+#### 8、第八课，优先级队列、贪心、递归、动态规划等：
 
 ##### ？
