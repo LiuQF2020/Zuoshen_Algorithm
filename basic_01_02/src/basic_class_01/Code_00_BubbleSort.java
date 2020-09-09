@@ -24,6 +24,12 @@ public class Code_00_BubbleSort {
 		arr[i] = arr[i] ^ arr[j];
 		arr[j] = arr[i] ^ arr[j];
 		arr[i] = arr[i] ^ arr[j];
+
+		/*
+		int tmp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = tmp;
+		 */
 	}
 
 	// for test
