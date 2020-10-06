@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Completion_Test/Completion_Test.iml" filepath="$PROJECT_DIR$/Completion_Test/Completion_Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/basic_01_02/basic_01_02.iml" filepath="$PROJECT_DIR$/basic_01_02/basic_01_02.iml" />
       <module fileurl="file://$PROJECT_DIR$/basic_03_04/basic_03_04.iml" filepath="$PROJECT_DIR$/basic_03_04/basic_03_04.iml" />
       <module fileurl="file://$PROJECT_DIR$/basic_05_06/basic_05_06.iml" filepath="$PROJECT_DIR$/basic_05_06/basic_05_06.iml" />

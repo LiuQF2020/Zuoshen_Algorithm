@@ -23,7 +23,7 @@ public class Code_04_QuickSort {
 		}
 	}
 
-	public static int[] partition1(int[] arr, int l, int r) {
+	public static int[] partition(int[] arr, int l, int r) {
 		int less = l - 1;
 		int more = r;
 		while (l < more) {
@@ -37,22 +37,6 @@ public class Code_04_QuickSort {
 		}
 		swap(arr, more, r);
 		return new int[] { less + 1, more };
-	}
-
-	public static int[] partition(int[] arr, int l, int r) {
-		int less = l - 1;
-		int more = r + 1;
-		while (l < more) {
-			if (arr[l] < arr[r]) {
-				swap(arr, ++less, l++);
-			} else if (arr[l] > arr[r]) {
-				swap(arr, --more, l);
-			} else {
-				l++;
-			}
-		}
-		// swap(arr, more, r);
-		return new int[] { less + 1, more - 1};
 	}
 
 	public static void swap(int[] arr, int i, int j) {
