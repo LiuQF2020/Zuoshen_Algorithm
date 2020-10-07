@@ -1,20 +1,22 @@
 package _01_排序._06_归并排序;
 
+import java.util.Arrays;
+
 public class Solution {
-    public static void merge(int[] arr) {
+    public static void mergeSort(int[] arr) {
         if (arr == null || arr.length < 2)  return;
-        merge(arr, 0, arr.length - 1);
+        sortProcess(arr, 0, arr.length - 1);
     }
 
-    public static void merge(int[] arr, int l, int r) {
+    public static void sortProcess(int[] arr, int l, int r) {
         if (l == r)  return;
         int mid = l + ((r - l) >> 1);
-        merge(arr, l, mid);
-        merge(arr, mid + 1, r);
-        mergeSort(arr, l, mid, r);
+        sortProcess(arr, l, mid);
+        sortProcess(arr, mid + 1, r);
+        merge(arr, l, mid, r);
     }
 
-    public static void mergeSort(int[] arr, int l, int mid, int r) {
+    public static void merge(int[] arr, int l, int mid, int r) {
         int[] help = new int[r - l + 1];
         int i = 0;
         int p1 = l;
@@ -34,5 +36,11 @@ public class Solution {
         for (i = 0; i < help.length; i++) {
             arr[l + i] = help[i];
         }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {2, 1, 9};
+        mergeSort(arr);
+        System.out.println(Arrays.toString(arr));
     }
 }
