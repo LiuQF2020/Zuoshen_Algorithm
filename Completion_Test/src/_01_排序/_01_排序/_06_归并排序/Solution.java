@@ -39,7 +39,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        int[] arr = {2, 1, 9};
+        int[] arr = {2, 1, 9, 4, 3, 7, 0};
         mergeSort(arr);
         System.out.println(Arrays.toString(arr));
     }
